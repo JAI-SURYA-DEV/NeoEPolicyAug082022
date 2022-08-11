@@ -1,0 +1,63 @@
+<!-- <p>login works!</p> -->
+<div
+  id="loginAlert"
+  class="alert alert-danger alert-dismissible fade show"
+  role="alert"
+  *ngIf="!isUserNameMatch"
+>
+  <strong>Warnning!</strong> UserName and password not match!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="container" style="width: 30%; margin-top: 10rem">
+  <!-- Content here -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userName"
+        name="userName"
+        formControlName="userName"
+        aria-describedby="emailHelp"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        formControlName="password"
+      />
+    </div>
+    <!-- <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm">
+      <div>
+        <label for="">User Name is:</label>
+        <span class="ml-2 text-muted">{{ userName }}</span>
+      </div>
+      <div>
+        <label for="">Password is:</label>
+        <span class="ml-2 text-muted">{{ password }}</span>
+      </div>
+    </div>
+    <div class="col-sm"></div>
+  </div>
+</div>
