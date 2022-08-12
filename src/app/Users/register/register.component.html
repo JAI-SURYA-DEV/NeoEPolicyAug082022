@@ -7,6 +7,15 @@
 <div class="container registerForm" style="width: 30%; margin-top: 5rem">
   <form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
+      <input
+        type="hidden"
+        class="form-control"
+        id="userId"
+        formControlName="userId"
+      />
+    </div>
+
+    <div class="form-group">
       <label for="firstName">First Name<span style="color: red">*</span></label>
       <input
         type="text"
