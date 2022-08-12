@@ -67,4 +67,9 @@ export class RegisterComponent implements OnInit {
       this.registerForm.reset();
     }
   }
+
+  // go to userlist page
+  goToUserList() {
+    this._router.navigate(['userList']);
+  }
 }
