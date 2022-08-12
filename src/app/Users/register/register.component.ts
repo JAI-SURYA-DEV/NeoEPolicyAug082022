@@ -21,11 +21,11 @@ export class RegisterComponent implements OnInit {
       lastName: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       department: new FormControl('it'),
-      mobile: new FormControl('0123456789', [
+      mobile: new FormControl(null, [
         Validators.required,
         Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
       ]),
-      gender: new FormControl('male'),
+      gender: new FormControl(null),
     });
 
     console.log('from ls', localStorage.getItem('storedRregisterUsersData'));
