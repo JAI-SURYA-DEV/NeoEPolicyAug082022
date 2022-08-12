@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class UserlistComponent implements OnInit {
   users: any = [];
+
   constructor(private _router: Router) {}
 
   ngOnInit(): void {
@@ -17,5 +18,13 @@ export class UserlistComponent implements OnInit {
   }
   goToRegister() {
     this._router.navigate(['/register']);
+  }
+  onDelete(user: any) {
+    // alert(user);
+    console.log(user);
+
+    this.users = this.users.filter((u: { userId: any }) => {
+      return u.userId !== user.userId;
+    });
   }
 }
