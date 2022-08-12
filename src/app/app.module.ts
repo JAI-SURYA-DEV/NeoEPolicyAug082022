@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Users/login/login.component';
 import { RegisterComponent } from './Users/register/register.component';
 import { UserlistComponent } from './Users/userlist/userlist.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, UserlistComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, UserlistComponent, PagenotfoundComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
