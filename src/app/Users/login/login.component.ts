@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   password!: number;
   storedData: any;
   isUserNameMatch: boolean = true;
+  loginForm!: FormGroup;
   constructor(private _router: Router) {}
 
   ngOnInit(): void {
@@ -20,12 +21,12 @@ export class LoginComponent implements OnInit {
       password: 'jaisurya@123',
     };
     localStorage.setItem('loginData', JSON.stringify(loginDtls));
-  }
 
-  loginForm = new FormGroup({
-    userName: new FormControl('', [Validators.required]),
-    password: new FormControl(''),
-  });
+    this.loginForm = new FormGroup({
+      userName: new FormControl('', [Validators.required]),
+      password: new FormControl(''),
+    });
+  }
 
   onSubmit() {
     console.log(this.loginForm.value);
@@ -55,7 +56,7 @@ export class LoginComponent implements OnInit {
         console.log(this.loginForm);
         setTimeout(() => {
           this.isUserNameMatch = true;
-        }, 1000);
+        }, 1500);
         // if (this.loginForm.invalid) {
         //   this.isUserNameMatch = true;
         // }
