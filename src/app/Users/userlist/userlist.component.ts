@@ -26,5 +26,11 @@ export class UserlistComponent implements OnInit {
     this.users = this.users.filter((u: { userId: any }) => {
       return u.userId !== user.userId;
     });
+
+    // store in local
+    localStorage.setItem(
+      'storedRregisterUsersData',
+      JSON.stringify(this.users)
+    );
   }
 }
